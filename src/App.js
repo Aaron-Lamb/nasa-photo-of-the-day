@@ -5,7 +5,13 @@ import axios from "axios";
 function App() {
   const [data, setData] = useState([]);
   useEffect(() => {
-
+    axios.get('https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY')
+    .then(response => {
+      console.log(response.data)
+    })
+    .catch(error => {
+      console.log(error)
+    })
   }, [])
   return (
     <div className="App">
