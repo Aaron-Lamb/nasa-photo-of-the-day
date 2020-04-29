@@ -1,15 +1,33 @@
 import React from "react";
 // This form is for the dropdown selector, which will allow the user to
 // pick an image from a particular date.
-const DropForm = () => {
+const DropForm = (props) => {
+
+    // Handle change for the month function
+    const monthChangeHandler = (e) => {
+        props.monthChange;
+    }
+    // Handle change for the year function
+    const yearChangeHandler = (e) => {
+        props.yearChange;
+    }
+    // Handle change for the day function
+    const dayChangeHandler = (e) => {
+        props.dayChange;
+    }
+    // Sumbit function
+    const submitHandler = (e) => {
+        e.preventDefault();
+        props.changeSubmit;
+    }
     return(
         // Main Div
         <div>
             {/* Form here */}
-            <form>
+            <form onSubmit={event => submitHandler(event)}>
                 <label>
                     Time Machine! Month:
-                    <select>
+                    <select onChange={event => monthChangeHandler(event)}>
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
@@ -26,7 +44,7 @@ const DropForm = () => {
                 </label>
                 <label>
                     Year:
-                <select>
+                <select onChange={event => yearChangeHandler(event)}>
                         <option value="2020">2020</option>
                         <option value="2019">2019</option>
                         <option value="2018">2018</option>
@@ -40,7 +58,7 @@ const DropForm = () => {
                 </label>
                 <label>
                     Day:
-                <select>
+                <select onChange={event => dayChangeHandler(event)}>
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
@@ -74,9 +92,10 @@ const DropForm = () => {
                         <option value="31">31</option>
                     </select>
                 </label>
+                <button>Search Date!</button>
             </form>
         </div>
     )
 }
 
-export default DropForm
+export default DropForm;
