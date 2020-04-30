@@ -4,6 +4,11 @@ import axios from "axios";
 import Header from "./components/Head";
 import Content from "./components/Content";
 import DropForm from "./components/Form";
+import styled from "styled-components";
+
+const AppDiv = styled.div`
+  background-color: aliceblue;
+`
 
 function App() {
   const [data, setData] = useState([]);
@@ -17,11 +22,11 @@ function App() {
     })
   }, [])
   return (
-    <div className="App">
+    <AppDiv className="App">
       <Header title={data.title} url={data.url}/>
       <DropForm />
       <Content date={data.date} explanation={data.explanation}/>
-    </div>
+    </AppDiv>
   );
 }
 
