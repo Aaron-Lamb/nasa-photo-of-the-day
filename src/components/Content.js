@@ -6,6 +6,7 @@ font-family: 'Baloo Tamma 2', cursive;
 `
 const InfoPar = styled.p`
     margin-left: 12.25%;
+    line-height: 150%;
     width: 75%;
     border: 3px solid grey;
     background-color: aliceblue;
