@@ -5,9 +5,10 @@ import Header from "./components/Head";
 import Content from "./components/Content";
 import DropForm from "./components/Form";
 import styled from "styled-components";
+import skyImage from "./taylor-van-riper-yQorCngxzwI-unsplash.jpg"
 
 const AppDiv = styled.div`
-  background-color: aliceblue;
+  background-image: url(${skyImage})
 `
 
 function App() {
