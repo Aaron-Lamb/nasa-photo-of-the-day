@@ -8,7 +8,8 @@ import styled from "styled-components";
 import skyImage from "./taylor-van-riper-yQorCngxzwI-unsplash.jpg"
 
 const AppDiv = styled.div`
-  background-image: url(${skyImage})
+  background-image: url(${skyImage});
+  background-size: cover;
 `
 
 function App() {
