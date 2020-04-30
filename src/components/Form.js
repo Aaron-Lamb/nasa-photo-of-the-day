@@ -1,4 +1,6 @@
 import React from "react";
+/** @jsx jsx */
+import { jsx } from '@emotion/core';
 // This form is for the dropdown selector, which will allow the user to
 // pick an image from a particular date.
 const DropForm = (props) => {
@@ -26,7 +28,12 @@ const DropForm = (props) => {
             {/* Form here */}
             {/* onSubmit={event => submitHandler(event)} */}
             <form>
-                <label>
+                <label
+                    css={{
+                        marginRight: '2%'
+                    }}
+                    {...props}
+                >
                     Time Machine! Month:
                     {/* onChange={event => monthChangeHandler(event)} */}
                     <select >
@@ -44,7 +51,11 @@ const DropForm = (props) => {
                         <option value="12">12</option>
                     </select>
                 </label>
-                <label>
+                <label css={{
+                    marginRight: '2%'
+                }}
+                {...props}
+                >
                     Year:
                     {/* onChange={event => yearChangeHandler(event)} */}
                 <select >
@@ -59,7 +70,11 @@ const DropForm = (props) => {
                         <option value="2012">2012</option>
                     </select>
                 </label>
-                <label>
+                <label css={{
+                    marginRight: '2%'
+                }}
+                {...props}
+                >
                     Day:
                     {/* onChange={event => dayChangeHandler(event)} */}
                 <select >
